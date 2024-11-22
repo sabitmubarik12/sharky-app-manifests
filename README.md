@@ -9,8 +9,6 @@ This repository contains the Kubernetes deployment manifests and application ass
 ├── manifests/              # Kubernetes manifests for deploying the Sharky application
 │   ├── deployment.yaml     # Deployment file for application services
 │   ├── service.yaml        # Service definition for the application
-│   ├── ingress.yaml        # Ingress configuration for traffic management
-│   └── configmap.yaml      # ConfigMap for application settings
 ├── assets/                 # Dockerfile and application code written in Go
 │   ├── Dockerfile          # Dockerfile for building the application image
 │   ├── main.go             # Main Go application source code
@@ -22,8 +20,6 @@ Manifests Directory
 -Contains Kubernetes manifests for deploying the Sharky application, including:
   -Deployments
   -Services
-  -Ingress
-  -ConfigMaps
   -Assets Directory
 Houses the application's Go source code and Dockerfile for containerizing the application.
 Prerequisites
@@ -64,8 +60,6 @@ Apply the manifests:
 ```
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
-kubectl apply -f ingress.yaml
-kubectl apply -f configmap.yaml
 ```
 
 Step 3: Verify the Deployment
