@@ -2,8 +2,7 @@ Sharky App Manifests
 This repository contains the Kubernetes deployment manifests and application assets required for deploying and running the Sharky application.
 
 Repository Structure
-plaintext
-Copy code
+
 .
 ├── manifests/              # Kubernetes manifests for deploying the Sharky application
 │   ├── deployment.yaml     # Deployment file for application services
@@ -15,58 +14,52 @@ Copy code
 │   ├── main.go             # Main Go application source code
 │   └── handlers/           # Directory for Go handlers and supporting logic
 └── README.md               # Project documentation
+
 Key Features
+
 Manifests Directory:
 Contains Kubernetes manifests for deploying the Sharky application, including Deployments, Services, Ingress, and ConfigMaps.
+
 Assets Directory:
 Houses the application's Go source code and Dockerfile for containerizing the application.
+
 Prerequisites
 Kubernetes Cluster (Google Kubernetes Engine or equivalent)
 kubectl CLI configured for your cluster
 Docker CLI for building application images
 Traefik or any other Ingress controller for traffic management (optional)
+
 Deployment Instructions
+
 Step 1: Build the Docker Image
 Navigate to the assets directory:
 
-bash
-Copy code
 cd assets
 Build the Docker image:
 
-bash
-Copy code
 docker build -t sharky-app:v1 .
 Push the Docker image to a container registry (e.g., Docker Hub or ECR):
 
-bash
-Copy code
 docker tag sharky-app:v1 <your-repo>/sharky-app:v1
 docker push <your-repo>/sharky-app:v1
+
 Step 2: Deploy the Application to Kubernetes
 Navigate to the manifests directory:
 
-bash
-Copy code
 cd ../manifests
 Apply the manifests:
 
-bash
-Copy code
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 kubectl apply -f ingress.yaml
 kubectl apply -f configmap.yaml
+
 Step 3: Verify the Deployment
 Check the status of pods:
 
-bash
-Copy code
 kubectl get pods
 Verify the service is accessible:
 
-bash
-Copy code
 kubectl get svc
 If Ingress is configured, access the application using the specified DNS or IP.
 
