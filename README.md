@@ -4,7 +4,7 @@ This repository contains the Kubernetes deployment manifests and application ass
 
 ## Repository Structure
 
-```plaintext
+```
 .
 ├── manifests/              # Kubernetes manifests for deploying the Sharky application
 │   ├── deployment.yaml     # Deployment file for application services
@@ -16,7 +16,7 @@ This repository contains the Kubernetes deployment manifests and application ass
 │   ├── main.go             # Main Go application source code
 │   └── handlers/           # Directory for Go handlers and supporting logic
 └── README.md               # Project documentation
-
+```
 Key Features
 Manifests Directory
 Contains Kubernetes manifests for deploying the Sharky application, including:
@@ -34,4 +34,4 @@ Traefik or any other Ingress controller for traffic management (optional)
 Deployment Instructions
 Step 1: Build the Docker Image
 Navigate to the assets directory:
-``` cd assets
+``` cd assets```
