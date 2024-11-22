@@ -15,19 +15,21 @@ This repository contains the Kubernetes deployment manifests and application ass
 │   └── handlers/           # Directory for Go handlers and supporting logic
 └── README.md               # Project documentation
 ```
-Key Features
+## Key Features
 Manifests Directory
 -Contains Kubernetes manifests for deploying the Sharky application, including:
   -Deployments
   -Services
   -Assets Directory
 Houses the application's Go source code and Dockerfile for containerizing the application.
-Prerequisites
+
+## Prerequisites
 Kubernetes Cluster (Google Kubernetes Engine or equivalent)
 kubectl CLI configured for your cluster
 Docker CLI for building application images
 Traefik or any other Ingress controller for traffic management (optional)
-Deployment Instructions
+
+## Deployment Instructions
 Step 1: Build the Docker Image
 Navigate to the assets directory:
 
@@ -77,12 +79,12 @@ kubectl get svc
 
 If Ingress is configured, access the application using the specified DNS or IP.
 
-Notes
+## Notes
 Update the deployment.yaml file with the correct Docker image tag from your container registry.
 Ensure the DNS settings are properly configured for Ingress to route traffic to the application.
 Modify configmap.yaml to adjust application-specific configurations.
 
-Application Features
+## Application Features
 The Sharky application, written in Go, is designed for scalability and performance. Key features include:
 Modular architecture with extensible handlers.
 Optimized Dockerfile for containerization.
