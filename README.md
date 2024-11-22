@@ -42,7 +42,7 @@ Build the Docker image:
 ``` docker build -t sharky-app:v1 . ```
 Push the Docker image to a container registry (e.g., Docker Hub or ECR):
 
-``` docker tag sharky-app:v1 <your-repo>/sharky-app:v1
+``` docker tag sharky-app:v1 <your-repo>/sharky-app:v1 
 docker push <your-repo>/sharky-app:v1 ```
 Step 2: Deploy the Application to Kubernetes
 Navigate to the manifests directory:
