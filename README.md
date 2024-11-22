@@ -19,12 +19,12 @@ This repository contains the Kubernetes deployment manifests and application ass
 ```
 Key Features
 Manifests Directory
-Contains Kubernetes manifests for deploying the Sharky application, including:
-Deployments
-Services
-Ingress
-ConfigMaps
-Assets Directory
+-Contains Kubernetes manifests for deploying the Sharky application, including:
+  -Deployments
+  -Services
+  -Ingress
+  -ConfigMaps
+  -Assets Directory
 Houses the application's Go source code and Dockerfile for containerizing the application.
 Prerequisites
 Kubernetes Cluster (Google Kubernetes Engine or equivalent)
@@ -35,32 +35,32 @@ Deployment Instructions
 Step 1: Build the Docker Image
 Navigate to the assets directory:
 
-``` cd assets```
+``` cd assets ```
 
 Build the Docker image:
 
-```docker build -t sharky-app:v1 .```
+``` docker build -t sharky-app:v1 . ```
 Push the Docker image to a container registry (e.g., Docker Hub or ECR):
 
-```docker tag sharky-app:v1 <your-repo>/sharky-app:v1
-docker push <your-repo>/sharky-app:v1```
+``` docker tag sharky-app:v1 <your-repo>/sharky-app:v1
+docker push <your-repo>/sharky-app:v1 ```
 Step 2: Deploy the Application to Kubernetes
 Navigate to the manifests directory:
 
-```cd ../manifests```
+``` cd ../manifests ```
 Apply the manifests:
 
-```kubectl apply -f deployment.yaml
+``` kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 kubectl apply -f ingress.yaml
-kubectl apply -f configmap.yaml```
+kubectl apply -f configmap.yaml ```
 Step 3: Verify the Deployment
 Check the status of pods:
 
-```kubectl get pods```
+``` kubectl get pods ```
 Verify the service is accessible:
 
-```kubectl get svc```
+``` kubectl get svc ```
 If Ingress is configured, access the application using the specified DNS or IP.
 
 Notes
